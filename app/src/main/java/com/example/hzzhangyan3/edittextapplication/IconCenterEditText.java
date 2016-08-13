@@ -82,12 +82,17 @@ public class IconCenterEditText extends EditText implements TextWatcher, View.On
 
 
         //获取EditText的DrawableRight,假如没有设置我们就使用默认的图片
+        //getCompoundDrawables()方法,该方法返回包含控件左,上,右,下四个位置的Drawable的数组
         mClearDrawable = getCompoundDrawables()[2];
         if (mClearDrawable == null) {
             mClearDrawable = getResources().getDrawable(R.mipmap.icon_transfer_delete);
             Log.d(TAG,"=========================================");
         }
+
+        //对drawable的边界进行处理
         mClearDrawable.setBounds(0, 0, mClearDrawable.getIntrinsicWidth(), mClearDrawable.getIntrinsicHeight());
+
+        //初始化默认清除图标不可见
         setClearIconVisible(false);
 
         //设置输入框焦点变化情况的监听
@@ -112,7 +117,7 @@ public class IconCenterEditText extends EditText implements TextWatcher, View.On
 
         } else {
 
-            // 如果不是默认样式，需要将图标绘制在中间
+            //如果不是默认样式，需要将图标绘制在中间
             Drawable[] drawables = getCompoundDrawables();
             Drawable drawableLeft = drawables[0];
             translate(drawableLeft, canvas);
@@ -129,6 +134,7 @@ public class IconCenterEditText extends EditText implements TextWatcher, View.On
             int drawableWidth = drawable.getIntrinsicWidth();
             float bodyWidth = textWidth + drawableWidth + drawablePadding;
             if (drawable == getCompoundDrawables()[0]) {
+                //平移画布
                 canvas.translate((getWidth() - bodyWidth - getPaddingLeft() - getPaddingRight()) / 2, 0);
             }
         }
@@ -177,7 +183,20 @@ public class IconCenterEditText extends EditText implements TextWatcher, View.On
     /**
      * 因为我们不能直接给EditText设置点击事件，所以我们用记住我们按下的位置来模拟点击事件
      * 当我们按下的位置 在  EditText的宽度 - 图标到控件右边的间距 - 图标的宽度  和
-     * EditText的宽度 - 图标到控件右边的间距之间我们就算点击了图标，竖直方向就没有考虑
+     * EditText的宽度 - 图标到控件右边的间距之间我们就算点击了图标，竖直方向就没有考虑。
+     *
+     * getWidth():得到控件的宽度
+     * event.getX():抬起时的坐标(改坐标是相对于控件本身而言的)
+     * getTotalPaddingRight():clean的图标左边缘至控件右边缘的距离
+     * getPaddingRight():clean的图标右边缘至控件右边缘的距离
+     *
+     * 于是:
+     * getWidth() - getTotalPaddingRight()表示:
+     * 控件左边到clean的图标左边缘的区域
+     * getWidth() - getPaddingRight()表示:
+     * 控件左边到clean的图标右边缘的区域
+     * 所以这两者之间的区域刚好是clean的图标的区域
+     *
      */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
