@@ -66,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
 
 附录参考链接
 
-        [Android自定义View示例(一)—带有删除按钮的EditText][6]
-        [【Android自定义控件】仿IOS风格的搜索框][7]
-        [Android中Bitmap和Drawable][8]
-        [求解答：android Drawable类的方法setBounds(int ,int, int, in ...][9]
-        [android Drawable setbounds()介绍][3]
-        [bitmap-setBounds方法参数研究][4]
-        [Canvas之translate、scale、rotate、skew方法讲解！][5]
+    [Android自定义View示例(一)—带有删除按钮的EditText][6]
+    [【Android自定义控件】仿IOS风格的搜索框][7]
+    [Android中Bitmap和Drawable][8]
+    [求解答：android Drawable类的方法setBounds(int ,int, int, in ...][9]
+    [android Drawable setbounds()介绍][3]
+    [bitmap-setBounds方法参数研究][4]
+    [Canvas之translate、scale、rotate、skew方法讲解！][5]
 
 
 
