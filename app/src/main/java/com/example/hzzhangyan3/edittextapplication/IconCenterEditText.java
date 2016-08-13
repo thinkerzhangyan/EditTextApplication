@@ -33,6 +33,26 @@ public class IconCenterEditText extends EditText implements TextWatcher, View.On
      */
     private OnEditTextListener listener;
 
+    /**
+     * 默认的IconCenterEditText监听
+     */
+    private OnEditTextListener deFaultListener = new OnEditTextListener() {
+        @Override
+        public void onEnterKeyAction(View view) {
+
+        }
+
+        @Override
+        public void onHasFocusAction(View view) {
+
+        }
+
+        @Override
+        public void onLostFocusAction(View view) {
+
+        }
+    };
+
 
     /**
      * 删除按钮的引用
@@ -118,8 +138,13 @@ public class IconCenterEditText extends EditText implements TextWatcher, View.On
     public void onFocusChange(View v, boolean hasFocus) {
 
         // 恢复EditText默认的样式
-        if (!pressEnterKey && TextUtils.isEmpty(getText().toString())&&listener!=null) {
+        if (TextUtils.isEmpty(getText().toString())) {
+
             isLeft = hasFocus;
+
+            if(listener==null)
+                listener = deFaultListener;
+
             if(hasFocus){
                 listener.onHasFocusAction(v);
             }else{
@@ -131,12 +156,16 @@ public class IconCenterEditText extends EditText implements TextWatcher, View.On
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
         pressEnterKey = (keyCode == KeyEvent.KEYCODE_ENTER);
-        if (pressEnterKey && listener != null) {
+        if (pressEnterKey) {
             /*隐藏软键盘*/
             InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             if (imm.isActive()) {
                 imm.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
             }
+
+            if(listener==null)
+                listener = deFaultListener;
+
             if (event.getAction() == KeyEvent.ACTION_UP) {
                 listener.onEnterKeyAction(v);
             }
