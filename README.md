@@ -64,7 +64,28 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 
+附录参考链接
 
-  [1]: https://github.com/946898963/EditTextApplication/blob/master/app/src/main/res/mipmap-hdpi/have_focus.png?raw=true
-  [2]: https://github.com/946898963/EditTextApplication/blob/master/app/src/main/res/mipmap-hdpi/lose_focus.png?raw=true
+[Android自定义View示例(一)—带有删除按钮的EditText][6]
+[【Android自定义控件】仿IOS风格的搜索框][7]
+
+[Android中Bitmap和Drawable][8]
+[求解答：android Drawable类的方法setBounds(int ,int, int, in ...][9]
+[android Drawable setbounds()介绍][3]
+[bitmap-setBounds方法参数研究][4]
+
+[Canvas之translate、scale、rotate、skew方法讲解！][5]
+
+
+
+
+[1]: https://github.com/946898963/EditTextApplication/blob/master/app/src/main/res/mipmap-hdpi/have_focus.png?raw=true
+[2]: https://github.com/946898963/EditTextApplication/blob/master/app/src/main/res/mipmap-hdpi/lose_focus.png?raw=true
+[3]: http://blog.csdn.net/love_xsq/article/details/45306157
+[4]: http://www.cnblogs.com/zhangshuli-1989/p/zhangshuli_setbound_15526135.html
+[5]: http://blog.csdn.net/tianjian4592/article/details/45234419
+[6]: http://blog.csdn.net/lfdfhl/article/details/18923079
+[7]: http://blog.csdn.net/zhuyb829/article/details/46430989
+[8]: http://dyh7077063.iteye.com/blog/970672
+[9]: http://bbs.51cto.com/thread-1015195-1.html
 
