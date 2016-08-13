@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+    <!--抢先IconCenterEditText获取焦点-->
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+    <com.example.hzzhangyan3.edittextapplication.IconCenterEditText
+        android:id="@+id/et_search_one"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginRight="@dimen/search_input_right_margin"
+        android:layout_marginLeft="@dimen/search_input_left_margin"
+        android:layout_marginBottom="@dimen/search_input_bottom_margin"
+        android:layout_marginTop="@dimen/search_input_top_margin"
+        android:background="@drawable/shape_white_bg_search_toolbar_edit"
+        android:drawableLeft="@mipmap/ic_search_gray"
+        android:drawableRight="@mipmap/icon_transfer_delete"
+        android:hint="搜索"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:textColorHint="#999999"
+        android:drawablePadding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        />
+
+    <com.example.hzzhangyan3.edittextapplication.IconCenterEditText
+        android:id="@+id/et_search_two"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginRight="@dimen/search_input_right_margin"
+        android:layout_marginLeft="@dimen/search_input_left_margin"
+        android:layout_marginBottom="@dimen/search_input_bottom_margin"
+        android:layout_marginTop="@dimen/search_input_top_margin"
+        android:background="@drawable/shape_white_bg_search_toolbar_edit"
+        android:drawableLeft="@mipmap/ic_search_gray"
+        android:drawableRight="@mipmap/icon_transfer_delete"
+        android:hint="搜索"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:textColorHint="#999999"
+        android:drawablePadding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        />
+
+
+
+</LinearLayout>
